@@ -4,11 +4,6 @@ from ascii import STAGES
 from game_logic import *
 
 # List of secret words
-WORDS = ["python", "git", "github", "snowman", "meltdown"]
-
-
-
-
 
 
 

@@ -1,7 +1,7 @@
-from snowman import WORDS
+#from snowman import WORDS
 import random
 from ascii import STAGES
-
+WORDS = ["python", "git", "github", "snowman", "meltdown"]
 
 def get_random_word():
     """Selects a random word from the list."""
@@ -34,10 +34,24 @@ def play_game():
                 # otherwise it is list index out of range
     correct_guess = 0
     found = False
+    alphabet = [
+    "a", "b", "c", "d", "e", "f", "g",
+    "h", "i", "j", "k", "l", "m", "n",
+    "o", "p", "q", "r", "s", "t", "u",
+    "v", "w", "x", "y", "z"
+    ]
 
-    while mistakes <= max_try and found is False:
+    while mistakes < max_try and found is False:
         display_game_state( secret_word, guessed_letters, mistakes)
         guess = input("Guess a letter: ").lower()
+
+        if guess not in alphabet:
+            print("You need to enter a letter from the alphabet")
+            continue
+        elif guess in guessed_letters:
+            print("Try another letter")
+            continue
+
         print("You guessed:", guess)
 
 
@@ -51,5 +65,5 @@ def play_game():
         if correct_guess == len(secret_word):
             found = True
             print("Congratulation you win!!!")
-        elif mistakes == len(secret_word):
+        elif mistakes == max_try:    #len(secret_word)
             print("Sorry, you lose")
