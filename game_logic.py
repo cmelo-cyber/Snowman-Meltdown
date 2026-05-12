@@ -67,5 +67,7 @@ def play_game():
         if correct_guess == len(secret_word):
             found = True
             print("Congratulation you win!!!")
+            again = input("Do you want to play again ?")
         elif mistakes == max_try:    #len(secret_word)
             print("Sorry, you lose")
+            again = input("Do you want to play again ?")
