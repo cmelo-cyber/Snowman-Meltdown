@@ -24,5 +24,9 @@ STAGES = [
      """
       ___  
      /___\\ 
+     """,
+    # Stage 4: Snowman completely melted
+     """
+      ___  
      """
  ]

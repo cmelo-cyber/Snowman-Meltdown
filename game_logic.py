@@ -24,13 +24,13 @@ def display_game_state(secret_word, guessed_letters,mistakes= 0):
 def play_game():
     secret_word = get_random_word()
     print("Welcome to Snowman Meltdown!")
-    #print("Secret word selected: " + secret_word)  # for testing, later remove this line
+    print("Secret word selected: " + secret_word)  # for testing, later remove this line
 
     # TODO: Build your game loop here.
     # For now, simply prompt the user once:
     mistakes = 0
     guessed_letters = []
-    max_try = 3   #len(secret_word) is not working there are only three stages for the snowman,
+    max_try = 5   #len(secret_word) is not working there are only three stages for the snowman,
                 # otherwise it is list index out of range
     correct_guess = 0
     found = False
@@ -67,7 +67,13 @@ def play_game():
         if correct_guess == len(secret_word):
             found = True
             print("Congratulation you win!!!")
-            again = input("Do you want to play again ?")
+
         elif mistakes == max_try:    #len(secret_word)
             print("Sorry, you lose")
+
+        if correct_guess == len(secret_word) or mistakes == max_try:
             again = input("Do you want to play again ?")
+            if again == "yes":
+                play_game()
+            else:
+                print("Bye")
