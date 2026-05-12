@@ -24,7 +24,7 @@ def display_game_state(secret_word, guessed_letters,mistakes= 0):
 def play_game():
     secret_word = get_random_word()
     print("Welcome to Snowman Meltdown!")
-    print("Secret word selected: " + secret_word)  # for testing, later remove this line
+    #print("Secret word selected: " + secret_word)  # for testing, later remove this line
 
     # TODO: Build your game loop here.
     # For now, simply prompt the user once:
@@ -52,7 +52,9 @@ def play_game():
             print("Try another letter")
             continue
 
-        print("You guessed:", guess)
+        print("----------------------------")
+        print("You guessed:", guess, "\n")
+
 
 
         if guess not in secret_word: # it is a wrong guess a mistake
